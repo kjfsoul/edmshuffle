@@ -1,0 +1,22 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import UserProfile from './components/UserProfile';
+import PostFeed from './components/PostFeed';
+import NavBar from './components/NavBar';
+
+function App() {
+  return (
+    <Router>
+      <NavBar />
+      <Switch>
+        <Route path="/" exact component={HomePage} />
+        <Route path="/profile/:id" component={UserProfile} />
+        <Route path="/feed" component={PostFeed} />
+        {/* Add more routes here */}
+      </Switch>
+    </Router>
+  );
+}
+
+export default App;
